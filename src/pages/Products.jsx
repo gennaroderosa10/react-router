@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from 'react';
+import ProductCard from "../components/ProductCard";
 
 
 export default function Products() {
@@ -23,19 +24,14 @@ export default function Products() {
                 {prodotti.map((prodotto) => {
 
                     return (
-                        <div className="card col-3 g-3" key={prodotto.id}>
-                            <img src={prodotto.image} className="card-img-top" alt={prodotto.title} />
-                            <div className="card-body">
-                                <h5 className="card-title">{prodotto.title}</h5>
-                                <p className="card-text">
-                                    {prodotto.description}
-                                </p>
-                            </div>
-                            <ul className="list-group list-group-flush">
-                                <li className="list-group-item">{prodotto.category}</li>
-                                <li className="list-group-item">{prodotto.price}</li>
-                            </ul>
-                        </div>
+                        <ProductCard
+                            key={prodotto.id}
+                            image={prodotto.image}
+                            title={prodotto.title}
+                            description={prodotto.description}
+                            category={prodotto.category}
+                            price={prodotto.price}
+                        />
                     )
 
                 })}
