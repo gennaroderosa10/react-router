@@ -8,7 +8,7 @@ export default function Products() {
 
     function fetchProdotti() {
         axios
-            .get(` https://fakestoreapi.com/products`)
+            .get(`https://fakestoreapi.com/products`)
             .then((resp) => {
                 setProdotti(resp.data)
             })
@@ -20,17 +20,13 @@ export default function Products() {
 
     return (
         <div className="containet mt-4">
-            <div className="row">
+            <div className="row row-cols-1 g-5">
                 {prodotti.map((prodotto) => {
 
                     return (
                         <ProductCard
                             key={prodotto.id}
-                            image={prodotto.image}
-                            title={prodotto.title}
-                            description={prodotto.description}
-                            category={prodotto.category}
-                            price={prodotto.price}
+                            product={prodotto}
                         />
                     )
 

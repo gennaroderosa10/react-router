@@ -7,6 +7,7 @@ import DefaultLayout from './layouts/DefaultLayout';
 import Home from './pages/Home';
 import About from './pages/About';
 import Products from './pages/products';
+import SingleProduct from './pages/SingleProduct';
 
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/chi-siamo' element={<About />} />
             <Route path='/prodotti' element={<Products />} />
-
+            <Route path="prodotti/:id" element={<SingleProduct />} />
 
           </Route>
         </Routes>
